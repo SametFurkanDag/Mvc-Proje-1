@@ -1,0 +1,40 @@
+﻿@model Mvc1.Models.Entity.TBLSATISLAR
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layou2.cshtml";
+}
+<button type="button" class="btn-primary" data-toggle="modal" data-target="#Modal1">Satış Yap</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Satış Yapma Ekranı</h2>
+            </div>
+            <form method="post" action="/Satis/YeniSatis">
+                <div class="modal-body">
+                    <label>
+                        Ürün Adı
+                        @Html.TextBoxFor(m => m.TBLURUNLER.URUNAD, new { @class = "form-control" })
+                        <br />
+                    </label>
+                    <label>
+                        Müşteri
+                        @Html.TextBoxFor(m => m.TBLMUSTERILER.MUSTERIAD, new { @class = "form-control" })
+                        <br />
+                        <label>
+                            Adet
+                            @Html.TextBoxFor(m => m.ADET, new { @class = "form-control" })
+                            <br />
+                        </label>
+                        <label>
+                            Fiyat
+                            @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+                            <br />
+                        </label>
+                        <button type="submit" class="btn-info">Satış İşlemini Yap</button>
+                        <button type="button" class="btn-danger"data-dismiss="modal">Vazgeç</button>
+</div>
+            </form>
+        </div>
+    </div>
+</div>
